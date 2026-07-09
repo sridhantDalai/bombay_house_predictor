@@ -1,0 +1,129 @@
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type Checkers
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# =========================
+# Node / React / Vite
+# =========================
+node_modules/
+dist/
+build/
+.vite/
+vite.svg
+
+# npm / yarn / pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# =========================
+# ML Models
+# (Uncomment if you DON'T want to upload models)
+# =========================
+# *.pkl
+# *.pickle
+# *.joblib
+# *.cbm
+# *.onnx
+# *.h5
+# *.pt
+# *.pth
+
+# =========================
+# Large Datasets
+# (Uncomment if datasets are too large)
+# =========================
+# data/
+# datasets/
+# *.csv
+# *.xlsx
+# *.parquet
+
+# =========================
+# FastAPI
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# Cache
+# =========================
+.cache/
+.pytest_cache/
+__pycache__/
+
+# =========================
+# Mac/Linux
+# =========================
+.AppleDouble
+.LSOverride
+
+# =========================
+# Windows
+# =========================
+ehthumbs.db
