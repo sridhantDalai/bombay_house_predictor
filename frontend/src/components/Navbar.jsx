@@ -49,7 +49,7 @@ export default function Navbar() {
 
       <div>
         <a 
-          href="https://github.com" 
+          href="https://github.com/sridhantDalai/bombay_house_predictor" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200/80 bg-white/40 hover:bg-white hover:border-gray-300 text-gray-700 text-xs font-semibold shadow-sm transition-all"
