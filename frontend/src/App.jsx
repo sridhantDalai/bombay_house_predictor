@@ -3,11 +3,14 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PredictionCard from './components/PredictionCard';
 import AnalyticsSection from './components/AnalyticsSection';
+import Footer from './components/Footer';
+import Preloader from './components/Preloader';
 import { Sparkles, AlertCircle, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function App() {
   const [toastMessage, setToastMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Mouse follow glow effect handler
   useEffect(() => {
@@ -29,6 +32,11 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-hidden">
+      
+      {/* 0. Cyber Preloader */}
+      {isLoading && (
+        <Preloader onComplete={() => setIsLoading(false)} />
+      )}
       
       {/* 1. Animated Blob Background elements */}
       <div className="blob-container">
@@ -61,24 +69,8 @@ export default function App() {
         <AnalyticsSection />
       </main>
 
-      {/* 5. Premium Minimalist Footer */}
-      <footer className="py-12 bg-gray-950 text-gray-500 border-t border-gray-900 text-center">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
-          <div className="flex items-center gap-2">
-            <span className="font-heading font-extrabold text-white tracking-tight">
-              Bombay House Predictor <span className="text-blue-500">AI</span>
-            </span>
-          </div>
-          <div className="font-medium">
-            © {new Date().getFullYear()} Bombay House Predictor AI. Crafted for Mumbai real estate valuations.
-          </div>
-          <div className="flex gap-6 font-semibold">
-            <a href="#predict-section" className="hover:text-white transition-colors">Predict</a>
-            <a href="#analytics-section" className="hover:text-white transition-colors">Market Insights</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Source Code</a>
-          </div>
-        </div>
-      </footer>
+      {/* 5. Premium Animated Footer */}
+      <Footer />
 
       {/* 6. Custom animated toast notifications */}
       <AnimatePresence>

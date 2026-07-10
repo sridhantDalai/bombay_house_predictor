@@ -34,6 +34,7 @@ export default {
       fontFamily: {
         heading: ['Poppins', 'Inter', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
+        jetbrains: ['"JetBrains Mono"', 'monospace'],
       },
       boxShadow: {
         'premium': '0 20px 60px rgba(0, 0, 0, 0.08)',
