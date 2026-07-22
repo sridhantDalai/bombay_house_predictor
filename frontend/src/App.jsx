@@ -5,6 +5,7 @@ import PredictionCard from './components/PredictionCard';
 import AnalyticsSection from './components/AnalyticsSection';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
+import CustomCursor from './components/CustomCursor';
 import { Sparkles, AlertCircle, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -32,6 +33,9 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-hidden">
+      
+      {/* Custom Cursor */}
+      <CustomCursor />
       
       {/* 0. Cyber Preloader */}
       {isLoading && (

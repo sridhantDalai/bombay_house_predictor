@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
-import { Sparkles, Code2, ExternalLink, Building, Heart } from 'lucide-react';
+import { Sparkles, Code2, ExternalLink, Heart } from 'lucide-react';
 
 export default function Footer() {
   const [isAtBottom, setIsAtBottom] = useState(false);
@@ -139,8 +139,12 @@ export default function Footer() {
           {/* Left: Branding */}
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="flex items-center gap-2 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-orange-500 flex items-center justify-center text-white shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform duration-300">
-                <Building className="w-4.5 h-4.5" />
+              <div className="w-8 h-8 flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-5.5 h-5.5">
+                  <circle cx="35" cy="38" r="8" fill="currentColor" />
+                  <circle cx="35" cy="62" r="8" fill="currentColor" />
+                  <path d="M 58 20 Q 81 50 58 80" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" />
+                </svg>
               </div>
               <span className="font-heading font-extrabold text-white tracking-tight flex items-center gap-1">
                 Bombay House Predictor <span className="text-blue-500 flex items-center gap-0.5">AI <Sparkles className="w-3 h-3 text-blue-400 fill-blue-500" /></span>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
@@ -18,8 +18,12 @@ export default function Navbar() {
       className="sticky top-0 z-40 w-full px-6 py-4 md:px-12 flex items-center justify-between bg-white/70 backdrop-blur-md border-b border-gray-200/50"
     >
       <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-orange-500 flex items-center justify-center text-white shadow-md shadow-blue-500/10">
-          <Building className="w-5 h-5" />
+        <div className="w-8 h-8 flex items-center justify-center text-gray-900 shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-6 h-6">
+            <circle cx="35" cy="38" r="8" fill="currentColor" />
+            <circle cx="35" cy="62" r="8" fill="currentColor" />
+            <path d="M 58 20 Q 81 50 58 80" fill="none" stroke="currentColor" strokeWidth="12" strokeLinecap="round" />
+          </svg>
         </div>
         <span className="font-heading font-extrabold text-base md:text-lg tracking-tight flex items-center gap-1.5 text-gray-900">
           Bombay House Predictor <span className="text-blue-600 flex items-center gap-0.5">AI <Sparkles className="w-3.5 h-3.5 fill-blue-600" /></span>

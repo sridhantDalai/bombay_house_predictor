@@ -77,158 +77,188 @@ export default function Hero() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="lg:col-span-6 relative w-full h-[320px] sm:h-[400px] lg:h-[450px] flex items-center justify-center"
       >
-        {/* Floating backdrop blur container */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-50/50 via-orange-50/20 to-pink-50/30 rounded-[40px] border border-white/80 backdrop-blur-[2px] shadow-inner -z-10" />
-
         {/* Interactive SVG Skyline Illustration */}
         <svg 
           viewBox="0 0 600 400" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full max-w-[500px]"
+          className="w-full h-full max-w-[500px] drop-shadow-[0_15px_35px_rgba(37,99,235,0.08)]"
         >
-          {/* Sun glowing in the background */}
-          <motion.circle 
-            cx="480" cy="120" r="45" 
-            fill="url(#sun-gradient)" 
-            animate={{ scale: [1, 1.05, 1], opacity: [0.8, 0.9, 0.8] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-
-          {/* Clouds */}
-          <motion.g 
-            animate={{ x: [-10, 10, -10] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <path d="M70,120 C85,120 90,110 95,115 C100,120 120,120 125,110 C130,100 110,90 95,95 C80,100 75,105 70,120 Z" fill="#FFFFFF" opacity="0.6" />
-            <path d="M400,90 C410,90 415,82 420,85 C425,88 435,88 440,82 C445,75 430,68 420,72 C410,75 405,80 400,90 Z" fill="#FFFFFF" opacity="0.8" />
-          </motion.g>
-
-          {/* Distant skyline (Flat light blue silhouettes) */}
-          <path d="M0,320 L50,300 L90,320 L120,290 L160,320 L220,270 L260,320 L300,285 L350,320 L400,260 L450,320 L490,295 L530,320 L600,270 L600,320 L0,320 Z" fill="#E2E8F0" opacity="0.6" />
-
-          {/* Middle layer skyscrapers (Blue-gray gradient) */}
-          <g opacity="0.8">
-            <rect x="80" y="160" width="30" height="160" rx="3" fill="url(#skyscrapers-mid)" />
-            <rect x="120" y="200" width="25" height="120" rx="3" fill="url(#skyscrapers-mid)" />
-            <rect x="250" y="140" width="40" height="180" rx="4" fill="url(#skyscrapers-mid)" />
-            <rect x="300" y="180" width="35" height="140" rx="3" fill="url(#skyscrapers-mid)" />
-            <rect x="420" y="130" width="30" height="190" rx="3" fill="url(#skyscrapers-mid)" />
-          </g>
-
-          {/* Forefront: Bandra-Worli Sea Link cables representation */}
-          <g>
-            <motion.path 
-              d="M 120 320 L 200 240 L 280 320" 
-              stroke="#CBD5E1" 
-              strokeWidth="2"
-              animate={{ y: [0, -2, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            {/* Main Pylon */}
-            <motion.polygon 
-              points="195,320 200,160 205,320" 
-              fill="url(#pylon-grad)"
-              animate={{ y: [0, -2, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            {/* Cable wires */}
-            <motion.path 
-              d="M 200 180 L 150 320 M 200 200 L 165 320 M 200 220 L 180 320 M 200 180 L 250 320 M 200 200 L 235 320 M 200 220 L 220 320" 
-              stroke="#94A3B8" 
-              strokeWidth="0.75" 
-              opacity="0.7"
-              animate={{ y: [0, -2, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </g>
-
-          {/* Gateway of India on the right */}
-          <motion.g 
-            transform="translate(480, 230)"
-            animate={{ y: [0, -1, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          >
-            {/* Base */}
-            <rect x="0" y="70" width="90" height="20" fill="url(#gateway-grad)" />
-            {/* Left and Right Columns */}
-            <rect x="5" y="20" width="20" height="50" fill="url(#gateway-grad)" />
-            <rect x="65" y="20" width="20" height="50" fill="url(#gateway-grad)" />
-            {/* Center Dome Arch */}
-            <path d="M 25 35 A 20 20 0 0 1 65 35 L 65 70 L 25 70 Z" fill="url(#gateway-grad)" />
-            {/* Arch details */}
-            <path d="M 30 45 A 15 15 0 0 1 60 45 L 60 70 L 30 70 Z" fill="#F1F5F9" opacity="0.4" />
-            {/* Roof cornice */}
-            <rect x="0" y="10" width="90" height="10" fill="url(#gateway-grad)" rx="2" />
-            {/* Little domes */}
-            <circle cx="15" cy="5" r="5" fill="url(#gateway-grad)" />
-            <circle cx="45" cy="5" r="8" fill="url(#gateway-grad)" />
-            <circle cx="75" cy="5" r="5" fill="url(#gateway-grad)" />
-          </motion.g>
-
-          {/* Modern Premium skyscrapers on the left */}
-          <motion.g 
-            animate={{ y: [0, -3, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            {/* Curved modern building */}
-            <path d="M 20 320 L 20 150 Q 35 120 50 150 L 50 320 Z" fill="url(#sky-premium)" />
-            {/* Spire building */}
-            <rect x="350" y="100" width="30" height="220" rx="2" fill="url(#sky-premium)" />
-            <line x1="365" y1="100" x2="365" y2="40" stroke="#F97316" strokeWidth="2.5" />
-            <circle cx="365" cy="40" r="3" fill="#F97316" className="animate-pulse" />
-          </motion.g>
-
-          {/* Sea Water Foreground */}
-          <rect x="0" y="320" width="600" height="80" fill="url(#sea-gradient)" />
-
-          {/* Water reflection waves */}
-          <motion.path 
-            d="M 10 330 Q 150 325 300 330 T 590 330" 
-            stroke="rgba(255, 255, 255, 0.4)" 
-            strokeWidth="1.5" 
-            fill="none" 
-            animate={{ d: ["M 10 330 Q 150 325 300 330 T 590 330", "M 10 332 Q 150 335 300 332 T 590 332", "M 10 330 Q 150 325 300 330 T 590 330"] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.path 
-            d="M 30 350 Q 200 345 370 350 T 570 350" 
-            stroke="rgba(249, 115, 22, 0.2)" 
-            strokeWidth="1" 
-            fill="none" 
-            animate={{ d: ["M 30 350 Q 200 345 370 350 T 570 350", "M 30 352 Q 200 355 370 352 T 570 352", "M 30 350 Q 200 345 370 350 T 570 350"] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          />
-
-          {/* Defs for gradients */}
           <defs>
-            <linearGradient id="sun-gradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#F97316" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#2563EB" stopOpacity="0" />
+            {/* Light-blue/white gradient for clouds */}
+            <linearGradient id="cloud-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#FFFFFF" />
+              <stop offset="100%" stopColor="#E0F2FE" />
             </linearGradient>
-            <linearGradient id="skyscrapers-mid" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#94A3B8" />
-              <stop offset="100%" stopColor="#CBD5E1" />
+            
+            {/* Island dirt gradient */}
+            <linearGradient id="dirt-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#8C5C42" />
+              <stop offset="60%" stopColor="#6C432D" />
+              <stop offset="100%" stopColor="#51301E" />
             </linearGradient>
-            <linearGradient id="sky-premium" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#1E3A8A" />
-              <stop offset="50%" stopColor="#2563EB" />
-              <stop offset="100%" stopColor="#3B82F6" />
-            </linearGradient>
-            <linearGradient id="pylon-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#64748B" />
-              <stop offset="100%" stopColor="#475569" />
-            </linearGradient>
-            <linearGradient id="gateway-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#475569" />
-              <stop offset="100%" stopColor="#334155" />
-            </linearGradient>
-            <linearGradient id="sea-gradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#1E3A8A" />
-              <stop offset="30%" stopColor="#0F172A" />
-              <stop offset="100%" stopColor="#020617" />
-            </linearGradient>
+
+            {/* Shadow under house */}
+            <radialGradient id="house-shadow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(69, 42, 28, 0.4)" />
+              <stop offset="100%" stopColor="rgba(69, 42, 28, 0)" />
+            </radialGradient>
+
+            {/* Soft glowing halo background */}
+            <radialGradient id="halo-grad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(37, 99, 235, 0.08)" />
+              <stop offset="60%" stopColor="rgba(236, 72, 153, 0.02)" />
+              <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
+            </radialGradient>
           </defs>
+
+          {/* Soft background glow */}
+          <circle cx="300" cy="200" r="180" fill="url(#halo-grad)" />
+
+          {/* Floating Group (Island + House) */}
+          <motion.g
+            animate={{ 
+              y: [-12, 12, -12],
+              rotate: [-0.5, 0.5, -0.5]
+            }}
+            transition={{ 
+              duration: 5, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          >
+            {/* 1. Rock Base (under the grass) */}
+            <path 
+              d="M 176 195 
+                 C 176 215, 205 235, 240 250 
+                 C 260 260, 280 285, 300 288 
+                 C 320 285, 340 260, 360 250 
+                 C 395 235, 424 215, 424 195 
+                 Z" 
+              fill="url(#dirt-grad)" 
+              stroke="#452A1C" 
+              strokeWidth="7" 
+              strokeLinejoin="round" 
+            />
+            
+            {/* Rock texture details/lines */}
+            <path d="M 230 205 L 255 240" stroke="#452A1C" strokeWidth="6" strokeLinecap="round" />
+            <path d="M 370 205 L 345 240" stroke="#452A1C" strokeWidth="6" strokeLinecap="round" />
+            <path d="M 300 205 L 300 282" stroke="#452A1C" strokeWidth="7" strokeLinecap="round" />
+
+            {/* 2. Grass Top (Green Ellipse) */}
+            <ellipse cx="300" cy="195" rx="124" ry="24" fill="#72B155" stroke="#452A1C" strokeWidth="7" />
+
+            {/* Subtle shadow directly under the house */}
+            <ellipse cx="300" cy="194" rx="60" ry="10" fill="url(#house-shadow)" />
+
+            {/* 3. The House */}
+            {/* Wall base */}
+            <rect 
+              x="248" 
+              y="145" 
+              width="104" 
+              height="45" 
+              fill="#FAF2DE" 
+              stroke="#452A1C" 
+              strokeWidth="7" 
+              strokeLinejoin="round" 
+            />
+
+            {/* Red Roof */}
+            <polygon 
+              points="300,95 235,148 365,148" 
+              fill="#D9534F" 
+              stroke="#452A1C" 
+              strokeWidth="7" 
+              strokeLinejoin="round" 
+            />
+
+            {/* Door */}
+            <rect 
+              x="264" 
+              y="155" 
+              width="22" 
+              height="35" 
+              rx="2" 
+              fill="#664635" 
+              stroke="#452A1C" 
+              strokeWidth="7" 
+            />
+            {/* Door Knob */}
+            <circle cx="270" cy="173" r="2.5" fill="#FAF2DE" />
+
+            {/* Window */}
+            <rect 
+              x="308" 
+              y="153" 
+              width="24" 
+              height="20" 
+              rx="2" 
+              fill="#98D9F5" 
+              stroke="#452A1C" 
+              strokeWidth="7" 
+              strokeLinejoin="round" 
+            />
+            {/* Window Pane Divider */}
+            <line x1="320" y1="153" x2="320" y2="173" stroke="#452A1C" strokeWidth="4.5" />
+          </motion.g>
+
+          {/* 4. Clouds (Floating below the island, with drifting animation) */}
+          {/* Left Cloud */}
+          <motion.g
+            animate={{ 
+              x: [-10, 10, -10],
+              y: [-2, 2, -2]
+            }}
+            transition={{ 
+              duration: 6, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          >
+            <path 
+              d="M 140 270 
+                 H 190 
+                 A 12 12 0 0 0 190 246 
+                 A 15 15 0 0 0 165 238 
+                 A 12 12 0 0 0 140 250 
+                 A 10 10 0 0 0 140 270 
+                 Z" 
+              fill="url(#cloud-grad)" 
+              stroke="#428EB9" 
+              strokeWidth="6" 
+              strokeLinejoin="round" 
+            />
+          </motion.g>
+
+          {/* Right Cloud */}
+          <motion.g
+            animate={{ 
+              x: [10, -10, 10],
+              y: [2, -2, 2]
+            }}
+            transition={{ 
+              duration: 7, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 0.5
+            }}
+          >
+            <path 
+              d="M 370 290 
+                 H 420 
+                 A 12 12 0 0 0 420 266 
+                 A 15 15 0 0 0 395 258 
+                 A 12 12 0 0 0 370 270 
+                 A 10 10 0 0 0 370 290 
+                 Z" 
+              fill="url(#cloud-grad)" 
+              stroke="#428EB9" 
+              strokeWidth="6" 
+              strokeLinejoin="round" 
+            />
+          </motion.g>
         </svg>
       </motion.div>
       
